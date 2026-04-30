@@ -1,0 +1,27 @@
+# netlify.toml — site configuration
+# Optional but recommended for explicit control
+
+[build]
+  publish = "."
+
+# Redirects: clean URLs without .html extension
+[[redirects]]
+  from = "/impressum"
+  to = "/impressum.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/cookies"
+  to = "/cookies.html"
+  status = 200
+
+# 404 fallback to index
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
