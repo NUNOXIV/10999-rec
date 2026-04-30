@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookies — 10999 Records</title>
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css?family=space-grotesk:300,400,500,600,700|jetbrains-mono:300,400,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a; --bg-soft: #131313; --fg: #f2f0eb;
+    --fg-mid: #8a8a8a; --fg-dim: #5a5a5a; --accent: #ff5b14; --line: #1f1f1f;
+    --sans: 'Space Grotesk', sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: var(--bg); }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  header {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 24px 40px; display: flex; justify-content: space-between;
+    align-items: center; z-index: 100; mix-blend-mode: difference;
+  }
+  .logo { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--fg); text-decoration: none; font-weight: 500; }
+  nav ul { list-style: none; display: flex; gap: 32px; }
+  nav a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--fg); text-decoration: none; transition: opacity 0.3s; }
+  nav a:hover { opacity: 0.55; }
+
+  .legal-hero { padding: 180px 40px 80px; border-bottom: 1px solid var(--line); }
+  .legal-hero .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--fg-dim); margin-bottom: 24px;
+    display: flex; align-items: baseline; gap: 16px; }
+  .legal-hero .label .num { color: var(--accent); font-weight: 500; }
+  .legal-hero h1 { font-family: var(--sans); font-weight: 600;
+    font-size: clamp(48px, 8vw, 110px); line-height: 0.92;
+    letter-spacing: -0.045em; margin-bottom: 24px; }
+  .legal-hero .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--fg-mid); }
+
+  .legal-body { max-width: 760px; margin: 0 auto; padding: 80px 40px 120px; }
+  .legal-body h2 { font-family: var(--sans); font-weight: 600; font-size: 22px;
+    letter-spacing: -0.02em; margin: 48px 0 16px; color: var(--fg);
+    padding-top: 24px; border-top: 1px solid var(--line); }
+  .legal-body h2:first-child { padding-top: 0; border-top: 0; margin-top: 0; }
+  .legal-body p { margin-bottom: 16px; color: var(--fg); }
+  .legal-body p.dim { color: var(--fg-mid); font-size: 14px; }
+  .legal-body ul { margin: 16px 0 16px 20px; }
+  .legal-body li { margin-bottom: 8px; }
+  .legal-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color 0.3s; }
+  .legal-body a:hover { border-color: var(--accent); }
+  .legal-body .placeholder {
+    background: var(--bg-soft); padding: 4px 8px; border-radius: 3px;
+    font-family: var(--mono); font-size: 0.92em; color: var(--fg-mid);
+  }
+
+  .legal-body table {
+    width: 100%; border-collapse: collapse; margin: 16px 0 32px;
+    font-family: var(--mono); font-size: 12px;
+  }
+  .legal-body table th {
+    text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line);
+    color: var(--fg-dim); font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; font-size: 10px;
+  }
+  .legal-body table td {
+    padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--fg);
+    vertical-align: top; line-height: 1.5;
+  }
+  .legal-body table tr:last-child td { border-bottom: 0; }
+
+  .badge {
+    display: inline-block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px;
+    color: var(--fg-mid); margin: 0 4px 4px 0;
+  }
+  .badge.green { color: #4ade80; border-color: rgba(74, 222, 128, 0.3); }
+  .badge.amber { color: #fbbf24; border-color: rgba(251, 191, 36, 0.3); }
+
+  .callout {
+    background: var(--bg-soft); border-left: 2px solid var(--accent);
+    padding: 24px 28px; margin: 24px 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout strong { color: var(--accent); }
+
+  footer { border-top: 1px solid var(--line); padding: 60px 40px 40px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--fg-mid); }
+  footer .col-brand .lockup { font-family: var(--sans); font-weight: 600; font-size: 32px;
+    letter-spacing: -0.03em; color: var(--fg); margin-bottom: 12px; }
+  footer h4 { color: var(--fg); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 18px; }
+  footer a { color: var(--fg-mid); text-decoration: none; display: block; padding: 5px 0; transition: color 0.3s; }
+  footer a:hover { color: var(--fg); }
+  .footer-bottom { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 28px;
+    margin-top: 48px; display: flex; justify-content: space-between;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-dim); }
+
+  @media (max-width: 860px) {
+    header { padding: 16px 20px; }
+    nav ul { gap: 18px; }
+    nav a, .logo { font-size: 10px; }
+    .legal-hero { padding: 120px 20px 60px; }
+    .legal-body { padding: 60px 20px 80px; }
+    .legal-body table { font-size: 11px; }
+    .legal-body table th, .legal-body table td { padding: 10px 10px; }
+    footer { grid-template-columns: 1fr 1fr; padding: 40px 20px 30px; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">10999 / REC</a>
+</header>
+
+<section class="legal-hero">
+  <div class="label"><span class="num">L03</span> / Legal</div>
+  <h1>Cookies.</h1>
+  <p class="meta">Information gemäß § 25 TDDDG · Art. 5 ePrivacy-Richtlinie</p>
+</section>
+
+<main class="legal-body">
+
+  <div class="callout">
+    <p><strong>Kurzfassung:</strong> Diese Webseite setzt selbst keine Cookies. Es findet kein Tracking, keine Analyse und keine Werbevermarktung statt. Cookies können ausschließlich beim aktiven Laden eingebetteter Inhalte (SoundCloud, Bandcamp) durch diese Drittanbieter gesetzt werden — und nur dann.</p>
+  </div>
+
+  <h2>Was sind Cookies?</h2>
+  <p>Cookies sind kleine Textdateien, die beim Besuch einer Webseite auf Ihrem Endgerät gespeichert werden. Sie können von der besuchten Webseite selbst (First-Party) oder von eingebundenen Drittinhalten (Third-Party) gesetzt werden. Ähnliche Technologien (LocalStorage, SessionStorage, Pixel) werden in dieser Erklärung mit umfasst.</p>
+  <p>Rechtsgrundlage für das Setzen nicht zwingend erforderlicher Cookies ist Ihre Einwilligung gemäß § 25 Abs. 1 TDDDG.</p>
+
+  <h2>Cookies dieser Webseite (First-Party)</h2>
+  <p><strong>Keine.</strong> Diese Webseite setzt keine eigenen Cookies. Es werden keine Daten in LocalStorage oder SessionStorage geschrieben. Es findet kein clientseitiges Profiling statt.</p>
+
+  <h2>Cookies durch eingebettete Drittinhalte</h2>
+  <p>Auf der <a href="/#listen">Listen-Seite</a> werden Player von SoundCloud und Bandcamp angeboten. Diese Player werden im Sinne des Datenschutzes <strong>nicht automatisch geladen</strong>. Erst nach einem expliziten Klick auf den jeweiligen „Load player"-Button wird der Drittanbieter geladen — und kann dann Cookies setzen.</p>
+  <p>Vor dem Klick werden keine Verbindungen zu diesen Anbietern aufgebaut und keine Cookies gesetzt.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Anbieter</th>
+        <th>Status</th>
+        <th>Zweck</th>
+        <th>Land</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>SoundCloud</strong><br>SoundCloud Limited</td>
+        <td><span class="badge green">Opt-in</span></td>
+        <td>Player-Funktion, Wiedergabestatus, Session-Management</td>
+        <td>Berlin, EU</td>
+      </tr>
+      <tr>
+        <td><strong>Bandcamp</strong><br>Bandcamp, Inc.</td>
+        <td><span class="badge green">Opt-in</span></td>
+        <td>Player-Funktion, Tracklisting, Session-Management</td>
+        <td><span class="badge amber">USA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Beatport</strong><br>Beatport LLC</td>
+        <td><span class="badge green">Externer Link</span></td>
+        <td>Kein Embed. Beim Klick wird die Webseite verlassen.</td>
+        <td><span class="badge amber">USA</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="dim">Die exakten Cookie-Namen, -Inhalte und -Lebensdauern werden durch die jeweiligen Anbieter festgelegt und können sich ändern. Details entnehmen Sie den Datenschutzerklärungen der Anbieter:</p>
+  <ul>
+    <li><a href="https://soundcloud.com/pages/cookies" target="_blank" rel="noopener noreferrer">SoundCloud Cookie Policy</a></li>
+    <li><a href="https://bandcamp.com/privacy" target="_blank" rel="noopener noreferrer">Bandcamp Privacy Policy</a></li>
+    <li><a href="https://www.beatport.com/privacy" target="_blank" rel="noopener noreferrer">Beatport Privacy Policy</a></li>
+  </ul>
+
+  <h2>Drittlandtransfer</h2>
+  <p>Bandcamp und Beatport haben ihren Sitz in den USA. Bei Aktivierung der Embeds bzw. Klick auf den Beatport-Link werden Daten in die USA übertragen. Übermittlungsgrundlage ist regelmäßig das EU-US Data Privacy Framework (Art. 45 DSGVO) oder EU-Standardvertragsklauseln (Art. 46 DSGVO).</p>
+  <p>Den aktuellen Zertifizierungsstatus der Anbieter unter dem Data Privacy Framework können Sie unter <a href="https://www.dataprivacyframework.gov/list" target="_blank" rel="noopener noreferrer">dataprivacyframework.gov/list</a> einsehen.</p>
+
+  <h2>Einwilligung verwalten</h2>
+  <p>Da diese Webseite keine Cookies vor Ihrer aktiven Entscheidung setzt, ist kein klassisches Cookie-Banner erforderlich. Sie erteilen Einwilligung pro Embed durch den Klick auf den entsprechenden „Load player"-Button.</p>
+  <p>Eine erteilte Einwilligung gilt nur für die aktuelle Browser-Session. Beim erneuten Aufruf der Seite müssen Sie Embeds erneut aktiv laden.</p>
+
+  <h2>Cookies löschen</h2>
+  <p>Sie können bereits gesetzte Cookies jederzeit über die Einstellungen Ihres Browsers löschen oder das Setzen neuer Cookies blockieren. Anleitungen finden Sie hier:</p>
+  <ul>
+    <li><a href="https://support.mozilla.org/de/kb/cookies-loeschen-daten-von-websites-entfernen" target="_blank" rel="noopener noreferrer">Firefox</a></li>
+    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Chrome</a></li>
+    <li><a href="https://support.apple.com/de-de/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
+    <li><a href="https://support.microsoft.com/de-de/microsoft-edge" target="_blank" rel="noopener noreferrer">Edge</a></li>
+  </ul>
+
+  <h2>Weitere Informationen</h2>
+  <p>Eine vollständige Beschreibung der Datenverarbeitung auf dieser Webseite finden Sie in der <a href="/privacy.html">Datenschutzerklärung</a>. Für rechtliche Angaben zum Verantwortlichen siehe <a href="/impressum.html">Impressum</a>.</p>
+
+  <p class="dim" style="margin-top: 60px;">Stand: 30. April 2026</p>
+</main>
+
+<footer>
+  <div class="col-brand">
+    <div class="lockup">10999 Rec.</div>
+    Lehderstr. 62B<br>
+    13086 Berlin
+  </div>
+  <div>
+    <h4>Contact</h4>
+    <a href="mailto:booking@10999rec.com">Booking</a>
+    <a href="mailto:info@10999rec.com">General</a>
+  </div>
+  <div>
+    <h4>Listen</h4>
+    <a href="https://soundcloud.com/nuno_10999" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+    <a href="https://nunoofficial.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+    <a href="https://www.beatport.com/de/label/10999-rec/111830" target="_blank" rel="noopener noreferrer">Beatport</a>
+    <a href="https://instagram.com/nuno_10999" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </div>
+  <div>
+    <h4>Legal</h4>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/cookies.html">Cookies</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span class="year-now">2026</span> 10999 Rec. — All rights reserved.</span>
+    <span>Built in Berlin</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.year-now').forEach(el => { el.textContent = new Date().getFullYear(); });
+</script>
+
+</body>
+</html>

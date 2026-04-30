@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz — 10999 Records</title>
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css?family=space-grotesk:300,400,500,600,700|jetbrains-mono:300,400,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a; --bg-soft: #131313; --fg: #f2f0eb;
+    --fg-mid: #8a8a8a; --fg-dim: #5a5a5a; --accent: #ff5b14; --line: #1f1f1f;
+    --sans: 'Space Grotesk', sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; background: var(--bg); }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  header {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 24px 40px; display: flex; justify-content: space-between;
+    align-items: center; z-index: 100; mix-blend-mode: difference;
+  }
+  .logo { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--fg); text-decoration: none; font-weight: 500; }
+  nav ul { list-style: none; display: flex; gap: 32px; }
+  nav a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--fg); text-decoration: none; transition: opacity 0.3s; }
+  nav a:hover { opacity: 0.55; }
+
+  .legal-hero { padding: 180px 40px 80px; border-bottom: 1px solid var(--line); }
+  .legal-hero .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--fg-dim); margin-bottom: 24px;
+    display: flex; align-items: baseline; gap: 16px; }
+  .legal-hero .label .num { color: var(--accent); font-weight: 500; }
+  .legal-hero h1 { font-family: var(--sans); font-weight: 600;
+    font-size: clamp(48px, 8vw, 110px); line-height: 0.92;
+    letter-spacing: -0.045em; margin-bottom: 24px; }
+  .legal-hero .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--fg-mid); }
+
+  .legal-body { max-width: 760px; margin: 0 auto; padding: 80px 40px 120px; }
+  .legal-body h2 { font-family: var(--sans); font-weight: 600; font-size: 22px;
+    letter-spacing: -0.02em; margin: 48px 0 16px; color: var(--fg);
+    padding-top: 24px; border-top: 1px solid var(--line); }
+  .legal-body h2:first-child { padding-top: 0; border-top: 0; margin-top: 0; }
+  .legal-body h3 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--fg-dim); margin: 28px 0 12px; }
+  .legal-body p { margin-bottom: 16px; color: var(--fg); }
+  .legal-body p.dim { color: var(--fg-mid); font-size: 14px; }
+  .legal-body ul { margin: 16px 0 16px 20px; }
+  .legal-body li { margin-bottom: 8px; }
+  .legal-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color 0.3s; }
+  .legal-body a:hover { border-color: var(--accent); }
+  .legal-body .placeholder {
+    background: var(--bg-soft); padding: 4px 8px; border-radius: 3px;
+    font-family: var(--mono); font-size: 0.92em; color: var(--fg-mid);
+  }
+  .legal-body .data-row {
+    display: grid; grid-template-columns: 200px 1fr; gap: 16px;
+    padding: 12px 0; border-bottom: 1px solid var(--line);
+    font-family: var(--mono); font-size: 13px;
+  }
+  .legal-body .data-row dt { color: var(--fg-dim); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; }
+  .legal-body .data-row dd { color: var(--fg); }
+
+  .toc {
+    background: var(--bg-soft); border: 1px solid var(--line);
+    padding: 24px 28px; margin-bottom: 40px;
+  }
+  .toc h3 { margin-top: 0; }
+  .toc ol { list-style: none; counter-reset: toc; padding-left: 0; }
+  .toc li { counter-increment: toc; font-family: var(--mono); font-size: 13px; padding: 4px 0; }
+  .toc li::before { content: counter(toc, decimal-leading-zero) " — "; color: var(--accent); }
+  .toc a { color: var(--fg); border: 0; }
+  .toc a:hover { color: var(--accent); }
+
+  footer { border-top: 1px solid var(--line); padding: 60px 40px 40px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--fg-mid); }
+  footer .col-brand .lockup { font-family: var(--sans); font-weight: 600; font-size: 32px;
+    letter-spacing: -0.03em; color: var(--fg); margin-bottom: 12px; }
+  footer h4 { color: var(--fg); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 18px; }
+  footer a { color: var(--fg-mid); text-decoration: none; display: block; padding: 5px 0; transition: color 0.3s; }
+  footer a:hover { color: var(--fg); }
+  .footer-bottom { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 28px;
+    margin-top: 48px; display: flex; justify-content: space-between;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-dim); }
+
+  @media (max-width: 860px) {
+    header { padding: 16px 20px; }
+    nav ul { gap: 18px; }
+    nav a, .logo { font-size: 10px; }
+    .legal-hero { padding: 120px 20px 60px; }
+    .legal-body { padding: 60px 20px 80px; }
+    .legal-body .data-row { grid-template-columns: 1fr; gap: 4px; }
+    footer { grid-template-columns: 1fr 1fr; padding: 40px 20px 30px; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">10999 / REC</a>
+</header>
+
+<section class="legal-hero">
+  <div class="label"><span class="num">L02</span> / Legal</div>
+  <h1>Datenschutz.</h1>
+  <p class="meta">Information gemäß Art. 13/14 DSGVO · § 25 TDDDG</p>
+</section>
+
+<main class="legal-body">
+
+  <p>Diese Webseite verarbeitet so wenig personenbezogene Daten wie möglich. Drittanbieter-Inhalte (SoundCloud, Bandcamp) werden ausschließlich nach aktivem Klick geladen („Two-Click-Solution"). Vor einem Klick werden keine Daten an diese Anbieter übertragen.</p>
+
+  <div class="toc">
+    <h3>Inhalt</h3>
+    <ol>
+      <li><a href="#verantwortlich">Verantwortlicher</a></li>
+      <li><a href="#zugriff">Zugriffsdaten beim Besuch</a></li>
+      <li><a href="#kontakt">Kontaktaufnahme</a></li>
+      <li><a href="#cookies">Cookies und lokale Speicherung</a></li>
+      <li><a href="#embeds">Eingebettete Drittinhalte (Click-to-Load)</a></li>
+      <li><a href="#hosting">Hosting</a></li>
+      <li><a href="#email">E-Mail-Provider</a></li>
+      <li><a href="#rechte">Ihre Rechte</a></li>
+      <li><a href="#aufsicht">Beschwerderecht</a></li>
+      <li><a href="#tom">Technische und organisatorische Maßnahmen</a></li>
+    </ol>
+  </div>
+
+  <h2 id="verantwortlich">01 — Verantwortlicher</h2>
+  <p>Verantwortlich für die Datenverarbeitung im Sinne des Art. 4 Nr. 7 DSGVO:</p>
+  <dl>
+    <div class="data-row"><dt>Name</dt><dd>10999 Rec.<br>Inhaber: Ninjo Oberwandling</dd></div>
+    <div class="data-row"><dt>Anschrift</dt><dd>Lehderstr. 62B<br>13086 Berlin, Deutschland</dd></div>
+    <div class="data-row"><dt>E-Mail</dt><dd><a href="mailto:info@10999rec.com">info@10999rec.com</a></dd></div>
+  </dl>
+  <p class="dim">Ein Datenschutzbeauftragter ist gemäß § 38 BDSG nicht zwingend zu bestellen. Bei Anfragen zu personenbezogenen Daten wenden Sie sich direkt an die oben genannte E-Mail-Adresse.</p>
+
+  <h2 id="zugriff">02 — Zugriffsdaten beim Besuch der Webseite</h2>
+  <p>Beim Aufruf dieser Webseite werden durch den Hosting-Provider technische Informationen automatisch verarbeitet:</p>
+  <ul>
+    <li>IP-Adresse (gekürzt/anonymisiert, sofern technisch möglich)</li>
+    <li>Datum und Uhrzeit des Zugriffs</li>
+    <li>Aufgerufene URL und HTTP-Statuscode</li>
+    <li>User-Agent (Browser, Betriebssystem)</li>
+    <li>Referrer-URL (sofern übermittelt)</li>
+  </ul>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung und Sicherheit der Webseite).</p>
+  <p><strong>Speicherdauer:</strong> Die Daten werden für maximal 14 Tage zur Abwehr von Angriffen und zur Fehleranalyse gespeichert und anschließend automatisch gelöscht.</p>
+
+  <h2 id="kontakt">03 — Kontaktaufnahme</h2>
+  <p>Wenn Sie uns per E-Mail oder über die auf der Webseite verlinkten Kontakt-Buttons (Booking, Demo, Press, Other) kontaktieren, werden Ihre Angaben (mindestens E-Mail-Adresse, Name sofern angegeben, Inhalt der Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage verarbeitet.</p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Anbahnung/Durchführung eines Vertrages) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+  <p><strong>Speicherdauer:</strong> Bis zur Erledigung der Anfrage. Bei vertraglichen Beziehungen gelten gesetzliche Aufbewahrungspflichten (z. B. § 147 AO: 6/10 Jahre).</p>
+
+  <h2 id="cookies">04 — Cookies und lokale Speicherung</h2>
+  <p>Diese Webseite setzt selbst <strong>keine Cookies</strong> und keinen LocalStorage. Es findet kein Tracking, kein Analytics und keine Werbevermarktung statt.</p>
+  <p>Cookies können ausschließlich durch eingebettete Drittinhalte gesetzt werden, und zwar nur dann, wenn Sie diese aktiv per Klick laden (siehe Abschnitt 05). Vor dem Klick werden keinerlei Cookies gesetzt.</p>
+  <p>Details siehe <a href="/cookies.html">Cookie-Erklärung</a>.</p>
+
+  <h2 id="embeds">05 — Eingebettete Drittinhalte (Click-to-Load)</h2>
+  <p>Auf der Listen-Seite stehen eingebettete Player von SoundCloud und Bandcamp bereit. Diese werden im Sinne des Art. 25 DSGVO (Privacy by Design) <strong>nicht automatisch geladen</strong>. Erst nach einem aktiven Klick auf den jeweiligen „Load player"-Button wird Verbindung zum Drittanbieter aufgebaut. Damit entscheiden Sie selbst, ob und wann Daten an diese Anbieter übertragen werden.</p>
+  <p>Mit dem Klick willigen Sie in die Datenübertragung ein (Art. 6 Abs. 1 lit. a DSGVO; § 25 Abs. 1 TDDDG).</p>
+
+  <h3>SoundCloud</h3>
+  <dl>
+    <div class="data-row"><dt>Anbieter</dt><dd>SoundCloud Limited<br>Rheinsberger Str. 76/77, 10115 Berlin, Deutschland</dd></div>
+    <div class="data-row"><dt>Datenübertragung</dt><dd>EU/EWR; SoundCloud kann Daten an Konzerngesellschaften außerhalb der EU übertragen</dd></div>
+    <div class="data-row"><dt>Verarbeitete Daten</dt><dd>IP-Adresse, Browser-Daten, Cookies, Interaktion mit dem Player</dd></div>
+    <div class="data-row"><dt>Datenschutz</dt><dd><a href="https://soundcloud.com/pages/privacy" target="_blank" rel="noopener noreferrer">soundcloud.com/pages/privacy</a></dd></div>
+  </dl>
+
+  <h3>Bandcamp</h3>
+  <dl>
+    <div class="data-row"><dt>Anbieter</dt><dd>Bandcamp, Inc. (Subsidiary of Songtradr Inc.)<br>1990 N California Blvd, Walnut Creek, CA 94596, USA</dd></div>
+    <div class="data-row"><dt>Datenübertragung</dt><dd>USA (Drittland)</dd></div>
+    <div class="data-row"><dt>Übermittlungsgrundlage</dt><dd>EU-US Data Privacy Framework (Art. 45 DSGVO) bzw. EU-Standardvertragsklauseln (Art. 46 DSGVO). Status auf <a href="https://www.dataprivacyframework.gov/list" target="_blank" rel="noopener noreferrer">dataprivacyframework.gov</a> prüfbar.</dd></div>
+    <div class="data-row"><dt>Verarbeitete Daten</dt><dd>IP-Adresse, Browser-Daten, Cookies, Interaktion mit dem Player</dd></div>
+    <div class="data-row"><dt>Datenschutz</dt><dd><a href="https://bandcamp.com/privacy" target="_blank" rel="noopener noreferrer">bandcamp.com/privacy</a></dd></div>
+  </dl>
+
+  <h3>Beatport (externer Link, kein Embed)</h3>
+  <p>Die Beatport-Karte verlinkt auf die Label-Seite <a href="https://www.beatport.com/de/label/10999-rec/111830" target="_blank" rel="noopener noreferrer">beatport.com/label/10999-rec</a>. Vor Klick werden keine Daten an Beatport übertragen. Beim Klick auf den Link verlassen Sie unsere Webseite. Es gilt die Datenschutzerklärung von Beatport LLC, Denver, Colorado, USA: <a href="https://www.beatport.com/privacy" target="_blank" rel="noopener noreferrer">beatport.com/privacy</a>.</p>
+
+  <h2 id="hosting">06 — Hosting</h2>
+  <p>Die Webseite wird gehostet bei <strong>GitHub, Inc.</strong>, 88 Colin P Kelly Jr Street, San Francisco, CA 94107, USA (GitHub Pages). GitHub ist Tochtergesellschaft der Microsoft Corporation und unter dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO).</p>
+  <p>Beim Aufruf der Seite werden technische Server-Logs durch GitHub verarbeitet (IP-Adresse, Zeitstempel, User-Agent, aufgerufene URL). Diese Logs werden zur Sicherstellung des Betriebs und zur Abwehr von Angriffen verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+  <p>Datenschutz GitHub: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">docs.github.com/site-policy/privacy-policies</a></p>
+
+  <h3>Schriftarten (Bunny Fonts)</h3>
+  <p>Diese Webseite nutzt Schriftarten von <strong>Bunny Fonts</strong>, einem GDPR-konformen Schriftarten-Dienst der BunnyWay d.o.o. (Slowenien, EU). Bunny Fonts protokolliert keine IP-Adressen und setzt keine Cookies. Es findet kein Drittlandtransfer statt.</p>
+  <p>Datenschutz Bunny Fonts: <a href="https://bunny.net/privacy/" target="_blank" rel="noopener noreferrer">bunny.net/privacy</a></p>
+
+  <h3>Kontaktformular (Formspree)</h3>
+  <p>Eingaben aus dem Kontaktformular werden über <strong>Formspree</strong> (Formspree, Inc., 2261 Market Street #4747, San Francisco, CA 94114, USA) verarbeitet. Die Formulardaten (Name, E-Mail, Anfragetyp, Nachricht und ggf. weitere ausgefüllte Felder) werden zum Zweck der Bearbeitung Ihrer Anfrage an die E-Mail-Adresse booking@10999rec.com weitergeleitet und im Formspree-Backend zur Spam-Filterung temporär gespeichert. Formspree ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
+  <p>Datenschutz Formspree: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a></p>
+  <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) sowie Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über Bestätigungs-Checkbox).</p>
+  <p>Speicherdauer: Bis zur Erledigung der Anfrage. Bei vertraglichen Beziehungen gelten gesetzliche Aufbewahrungspflichten.</p>
+
+  <h2 id="email">07 — E-Mail-Provider</h2>
+  <p>Eingehende und ausgehende E-Mails werden über Google Workspace verarbeitet (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Inhalte und Metadaten Ihrer E-Mail werden bei Google verarbeitet.</p>
+  <p><strong>Datenschutz:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+
+  <h2 id="rechte">08 — Ihre Rechte</h2>
+  <p>Ihnen stehen nach Art. 15 ff. DSGVO folgende Rechte zu:</p>
+  <ul>
+    <li><strong>Auskunft</strong> über die zu Ihrer Person verarbeiteten Daten (Art. 15)</li>
+    <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16)</li>
+    <li><strong>Löschung</strong> Ihrer Daten („Recht auf Vergessenwerden", Art. 17)</li>
+    <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18)</li>
+    <li><strong>Datenübertragbarkeit</strong> (Art. 20)</li>
+    <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21)</li>
+    <li><strong>Widerruf</strong> erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3)</li>
+  </ul>
+  <p>Anfragen richten Sie bitte formlos an <a href="mailto:booking@10999rec.com">booking@10999rec.com</a>.</p>
+
+  <h2 id="aufsicht">09 — Beschwerderecht bei der Aufsichtsbehörde</h2>
+  <p>Unbeschadet anderer Rechtsbehelfe haben Sie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde. Zuständig für den Sitz des Verantwortlichen:</p>
+  <p><strong>Berliner Beauftragte für Datenschutz und Informationsfreiheit</strong><br>
+  Friedrichstraße 219, 10969 Berlin<br>
+  Telefon: +49 30 13889-0<br>
+  E-Mail: <a href="mailto:mailbox@datenschutz-berlin.de">mailbox@datenschutz-berlin.de</a><br>
+  Web: <a href="https://www.datenschutz-berlin.de" target="_blank" rel="noopener noreferrer">datenschutz-berlin.de</a></p>
+
+  <h2 id="tom">10 — Technische und organisatorische Maßnahmen</h2>
+  <p>Die Datenübertragung zwischen Ihrem Browser und dieser Webseite erfolgt durchgehend verschlüsselt (TLS/HTTPS). Wir setzen weitere angemessene technische und organisatorische Maßnahmen gemäß Art. 32 DSGVO ein, darunter:</p>
+  <ul>
+    <li>Regelmäßige Aktualisierung von Software und Abhängigkeiten</li>
+    <li>Minimierung verarbeiteter Daten (Datensparsamkeit, Art. 5 DSGVO)</li>
+    <li>Verzicht auf Tracking, Analytics und Werbe-Cookies</li>
+    <li>Two-Click-Solution für Drittinhalte (Privacy by Design, Art. 25)</li>
+    <li>Sichere Konfiguration des Hostings (Security Headers, HSTS)</li>
+  </ul>
+
+  <p class="dim" style="margin-top: 60px;">Stand: 30. April 2026 · Diese Datenschutzerklärung wird bei wesentlichen Änderungen aktualisiert.</p>
+</main>
+
+<footer>
+  <div class="col-brand">
+    <div class="lockup">10999 Rec.</div>
+    Lehderstr. 62B<br>
+    13086 Berlin
+  </div>
+  <div>
+    <h4>Contact</h4>
+    <a href="mailto:booking@10999rec.com">Booking</a>
+    <a href="mailto:info@10999rec.com">General</a>
+  </div>
+  <div>
+    <h4>Listen</h4>
+    <a href="https://soundcloud.com/nuno_10999" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+    <a href="https://nunoofficial.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+    <a href="https://www.beatport.com/de/label/10999-rec/111830" target="_blank" rel="noopener noreferrer">Beatport</a>
+    <a href="https://instagram.com/nuno_10999" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </div>
+  <div>
+    <h4>Legal</h4>
+    <a href="/impressum.html">Impressum</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/cookies.html">Cookies</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span class="year-now">2026</span> 10999 Rec. — All rights reserved.</span>
+    <span>Built in Berlin</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.year-now').forEach(el => { el.textContent = new Date().getFullYear(); });
+</script>
+
+</body>
+</html>
