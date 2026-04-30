@@ -429,78 +429,241 @@
     margin-top: 14px;
   }
 
-  /* INQUIRY TILES (replaces booking form) */
-  .inquiry-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--line);
-    border-left: 1px solid var(--line);
+  /* CONTACT FORM */
+  .contact-form {
     margin-top: 60px;
+    max-width: 800px;
+    border-top: 1px solid var(--line);
   }
 
-  .inquiry-tile {
-    border-right: 1px solid var(--line);
+  .form-row {
     border-bottom: 1px solid var(--line);
-    padding: 56px 40px;
-    text-decoration: none;
-    color: var(--fg);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 240px;
-    transition: background 0.4s, padding 0.4s;
-    cursor: pointer;
-    position: relative;
+    padding: 24px 0;
   }
 
-  .inquiry-tile:hover {
-    background: var(--bg-soft);
-    padding-left: 52px;
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0;
   }
 
-  .inquiry-tile .num {
+  .form-row-2 .form-field {
+    padding: 24px 0;
+    border-bottom: 0;
+  }
+
+  .form-row-2 .form-field + .form-field {
+    border-left: 1px solid var(--line);
+    padding-left: 24px;
+  }
+
+  .form-field {
+    display: block;
+    width: 100%;
+  }
+
+  .form-label {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--fg-dim);
+    display: block;
+    margin-bottom: 8px;
   }
 
-  .inquiry-tile .label {
+  .req {
+    color: var(--accent);
+  }
+
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    color: var(--fg);
     font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(40px, 5vw, 64px);
-    line-height: 1;
-    letter-spacing: -0.035em;
-    margin: 24px 0 16px;
-    transition: color 0.3s;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+    outline: none;
   }
 
-  .inquiry-tile:hover .label { color: var(--accent); }
+  .form-field select {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8a8a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    padding-right: 24px;
+  }
 
-  .inquiry-tile .desc {
+  .form-field select option {
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: var(--fg-dim);
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: var(--sans);
+  }
+
+  .form-consent {
+    padding: 24px 0;
+  }
+
+  /* Booking-only conditional fields */
+  .booking-only {
+    transition: opacity 0.3s ease;
+  }
+
+  .booking-only[hidden] {
+    display: none !important;
+  }
+
+  /* Pricing notice for sub-4h sets */
+  .pricing-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    margin: 20px 0;
+    background: var(--bg-soft);
+    border-left: 2px solid var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--fg);
+    letter-spacing: 0.02em;
+    animation: pn-in 0.3s ease;
+  }
+
+  @keyframes pn-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .pricing-notice[hidden] { display: none; }
+
+  .pn-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .pn-text strong { color: var(--accent); font-weight: 500; }
+
+  .checkbox-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
     font-family: var(--mono);
     font-size: 12px;
     color: var(--fg-mid);
-    letter-spacing: 0.05em;
     line-height: 1.6;
+    letter-spacing: 0.02em;
   }
 
-  .inquiry-tile .arrow {
+  .checkbox-field input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--fg-dim);
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .checkbox-field input[type="checkbox"]:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .checkbox-field input[type="checkbox"]:checked::after {
+    content: "✓";
     position: absolute;
-    top: 56px;
-    right: 40px;
-    font-family: var(--sans);
-    font-size: 24px;
-    color: var(--fg-dim);
-    transition: color 0.3s, transform 0.4s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 700;
   }
 
-  .inquiry-tile:hover .arrow {
-    color: var(--accent);
-    transform: translateX(6px);
+  .checkbox-field a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
+
+  .form-submit {
+    width: 100%;
+    background: var(--fg);
+    color: var(--bg);
+    border: 0;
+    padding: 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background 0.3s, color 0.3s, letter-spacing 0.3s;
+  }
+
+  .form-submit:hover {
+    background: var(--accent);
+    color: var(--fg);
+    letter-spacing: 0.28em;
+  }
+
+  .form-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Honeypot — invisible to humans, visible to bots */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .form-status {
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .form-status.success { color: #4ade80; }
+  .form-status.error { color: #ef4444; }
 
   .form-note {
     font-family: var(--mono);
@@ -605,10 +768,12 @@
     section { padding: 100px 20px; }
     .artist-intro { grid-template-columns: 1fr; gap: 32px; margin-bottom: 60px; }
     .embed-grid { grid-template-columns: 1fr; }
-    .inquiry-grid { grid-template-columns: 1fr; }
-    .inquiry-tile { padding: 40px 24px; min-height: 180px; }
-    .inquiry-tile .arrow { top: 40px; right: 24px; }
-    .inquiry-tile:hover { padding-left: 32px; }
+    .form-row-2 { grid-template-columns: 1fr; gap: 0; }
+    .form-row-2 .form-field + .form-field {
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      padding-left: 0;
+    }
     footer { grid-template-columns: 1fr 1fr; padding: 60px 20px 30px; gap: 32px; }
     .footer-bottom { flex-direction: column; gap: 12px; }
   }
@@ -739,50 +904,105 @@
 
 <section class="contact" id="contact">
   <div class="section-label reveal"><span class="num">003</span> / Contact</div>
-  <h2 class="big-headline reveal">Pick a topic. <span class="thin">We'll handle the rest.</span></h2>
+  <h2 class="big-headline reveal">Get in touch. <span class="thin">We'll get back to you.</span></h2>
 
-  <div class="inquiry-grid reveal-stagger">
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    class="contact-form reveal"
+    action="/?sent=1"
+  >
+    <!-- Netlify form requirements -->
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hp-field" aria-hidden="true">
+      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </p>
 
-    <a class="inquiry-tile" href="mailto:booking@10999rec.com?subject=Booking%20%7C%20">
-      <div class="num">→ 01</div>
-      <div>
-        <div class="label">Booking</div>
-        <div class="desc">DJ sets, residencies, label nights — for NUNO (DE).</div>
+    <div class="form-row">
+      <label class="form-field">
+        <span class="form-label">Inquiry type</span>
+        <select name="inquiry_type" id="inquiry-type" required>
+          <option value="Booking">Booking — DJ set / residency for NUNO (DE)</option>
+          <option value="Demo">Demo — link to your music</option>
+          <option value="Press">Press — interview / feature / premiere</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Booking-only fields: set length, date, venue -->
+    <div class="booking-only">
+      <div class="form-row form-row-2">
+        <label class="form-field">
+          <span class="form-label">Set length <span class="req">*</span></span>
+          <select name="set_length" id="set-length">
+            <option value="">— please select —</option>
+            <option value="1h">1 hour</option>
+            <option value="2h">2 hours</option>
+            <option value="3h">3 hours</option>
+            <option value="4h">4 hours (standard)</option>
+            <option value="5h">5 hours (extended)</option>
+            <option value="6h+">6+ hours / open-end</option>
+            <option value="b2b">b2b / shared slot</option>
+          </select>
+        </label>
+        <label class="form-field">
+          <span class="form-label">Date</span>
+          <input type="date" name="event_date">
+        </label>
       </div>
-      <div class="arrow">→</div>
-    </a>
 
-    <a class="inquiry-tile" href="mailto:info@10999rec.com?subject=Demo%20%7C%20">
-      <div class="num">→ 02</div>
-      <div>
-        <div class="label">Demo</div>
-        <div class="desc">Send links, no attachments. Releases via Dig Dis!</div>
+      <div class="pricing-notice" id="pricing-notice" hidden>
+        <span class="pn-icon">!</span>
+        <span class="pn-text">Sets under 4 hours are priced at a higher hourly rate. Standard pricing applies from 4 hours upward. We'll send specifics on request.</span>
       </div>
-      <div class="arrow">→</div>
-    </a>
+    </div>
 
-    <a class="inquiry-tile" href="mailto:info@10999rec.com?subject=Press%20%7C%20">
-      <div class="num">→ 03</div>
-      <div>
-        <div class="label">Press</div>
-        <div class="desc">Interviews, features, premieres.</div>
-      </div>
-      <div class="arrow">→</div>
-    </a>
+    <div class="form-row form-row-2">
+      <label class="form-field">
+        <span class="form-label">Name <span class="req">*</span></span>
+        <input type="text" name="name" required>
+      </label>
+      <label class="form-field">
+        <span class="form-label">Email <span class="req">*</span></span>
+        <input type="email" name="email" required>
+      </label>
+    </div>
 
-    <a class="inquiry-tile" href="mailto:info@10999rec.com?subject=Other%20%7C%20">
-      <div class="num">→ 04</div>
-      <div>
-        <div class="label">Other</div>
-        <div class="desc">Anything that doesn't fit the boxes above.</div>
-      </div>
-      <div class="arrow">→</div>
-    </a>
+    <div class="form-row form-row-2">
+      <label class="form-field">
+        <span class="form-label">Venue / Project</span>
+        <input type="text" name="venue" placeholder="optional">
+      </label>
+      <label class="form-field">
+        <span class="form-label">City</span>
+        <input type="text" name="city" placeholder="optional">
+      </label>
+    </div>
 
-  </div>
+    <div class="form-row">
+      <label class="form-field">
+        <span class="form-label">Message <span class="req">*</span></span>
+        <textarea name="message" rows="5" required placeholder="A few details to help us reply properly."></textarea>
+      </label>
+    </div>
+
+    <div class="form-row form-consent">
+      <label class="checkbox-field">
+        <input type="checkbox" name="consent" required>
+        <span>I agree that my data is processed to handle this inquiry. Details: <a href="privacy.html">Privacy</a>. <span class="req">*</span></span>
+      </label>
+    </div>
+
+    <button type="submit" class="form-submit">Send message →</button>
+
+    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+  </form>
 
   <p class="form-note">
-    Each tile opens your email client with a pre-filled subject. Direct: <a href="mailto:booking@10999rec.com">booking@10999rec.com</a>
+    Goes to <a href="mailto:booking@10999rec.com">booking@10999rec.com</a>. Required fields marked <span class="req">*</span>.
   </p>
 </section>
 
@@ -888,6 +1108,78 @@
       a.setAttribute('rel', 'noopener noreferrer');
     });
   })();
+
+  // Contact form — submit via fetch to keep user on page, show inline status
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    const status = document.getElementById('form-status');
+    const submitBtn = form.querySelector('.form-submit');
+    const inquiryType = document.getElementById('inquiry-type');
+    const setLength = document.getElementById('set-length');
+    const bookingOnly = document.querySelector('.booking-only');
+    const pricingNotice = document.getElementById('pricing-notice');
+
+    // Show booking-only fields only when "Booking" is selected
+    function toggleBookingFields() {
+      const isBooking = inquiryType.value === 'Booking';
+      bookingOnly.hidden = !isBooking;
+      // make set_length required only for booking
+      setLength.required = isBooking;
+      if (!isBooking) {
+        setLength.value = '';
+        pricingNotice.hidden = true;
+      }
+    }
+
+    // Show pricing notice when a sub-4h set is selected
+    const shortSets = new Set(['1h', '2h', '3h']);
+    function togglePricingNotice() {
+      pricingNotice.hidden = !shortSets.has(setLength.value);
+    }
+
+    inquiryType.addEventListener('change', toggleBookingFields);
+    setLength.addEventListener('change', togglePricingNotice);
+    toggleBookingFields(); // initial state
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      status.className = 'form-status';
+      status.textContent = '';
+
+      const formData = new FormData(form);
+      const body = new URLSearchParams(formData).toString();
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        });
+
+        if (response.ok) {
+          form.reset();
+          toggleBookingFields(); // reset conditional state
+          status.className = 'form-status success';
+          status.textContent = '✓ Sent. We\'ll be in touch.';
+          submitBtn.textContent = 'Sent ✓';
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send message →';
+          }, 4000);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        status.className = 'form-status error';
+        status.textContent = '✗ Couldn\'t send. Try again or email booking@10999rec.com directly.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message →';
+      }
+    });
+  }
 </script>
 
 </body>
